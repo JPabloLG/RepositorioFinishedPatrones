@@ -6,5 +6,29 @@ public class Dueño extends Usuario{
         super(nombre, codigo);
     }
 
+    @Override
+    public void realizarPedido(String idPedido) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'realizarPedido'");
+    }
+
+    @Override
+    public void realizarPedido() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'realizarPedido'");
+    }
+
+    @Override
+    public void registrarPedido() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'registrarPedido'");
+    }
+
+    @Override
+    public void aplicarDescuento() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'aplicarDescuento'");
+    }
+
 
 }

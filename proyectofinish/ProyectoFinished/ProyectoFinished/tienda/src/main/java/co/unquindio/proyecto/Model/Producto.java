@@ -1,16 +1,10 @@
 package co.unquindio.proyecto.Model;
 
-public class Producto {
-    private String talla;
-    private double precio;
-    private TipoProducto tipoProducto;
+public abstract class Producto implements Cloneable{
+    public String talla;
+    public double precio;
+    public String descripcion;
     
-    public Producto(String talla, TipoProducto tipoProducto, double precio) {
-        this.talla = talla;
-        this.precio = precio;
-        this.tipoProducto = tipoProducto;
-    }
-
     public String getTalla(){
         return talla;
     }
@@ -19,9 +13,6 @@ public class Producto {
         return precio;
     }
 
-    public TipoProducto getTipoProducto(){
-        return tipoProducto;
-    }
     
     public void setTalla(String talla){
         this.talla = talla;
@@ -30,5 +21,22 @@ public class Producto {
     public void setPrecio(double precio){
         this.precio = precio;
     }
+
+    public void setDescripcion (String descripcion){
+        this.descripcion = descripcion;
+    }
+
+    public String getDescripcion(){
+        return descripcion;
+    }
+
+    @Override
+    public Producto clone() {
+        try {
+            return (Producto) super.clone();
+        } catch (CloneNotSupportedException e) {
+            throw new AssertionError();
+        }
+        }
 
 }

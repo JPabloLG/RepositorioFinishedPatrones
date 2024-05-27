@@ -6,10 +6,18 @@ import java.util.Optional;
 import java.util.function.Predicate;
 
 public class Pedido {
+    private String id;
     private List<Producto> listaProductos;
+    private PrecioEstrategia estrategia;
 
-    public Pedido(){
+    public Pedido(String id, PrecioEstrategia estrategia){
+        this.id = id;
+        this.estrategia = estrategia;
         this.listaProductos = new ArrayList<>();
+    }
+    
+    public double calcularPrecio() {
+        return estrategia.calcularPrecio(getPrecio(listaProductos));
     }
 
     public void agregarProducto(Producto producto){
@@ -29,4 +37,20 @@ public class Pedido {
         return listaProductos;
     }
 
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public double getPrecio(List<Producto> productos){
+        double precioTotal = 0;
+        for (Producto producto : productos) {
+            precioTotal += producto.getPrecio();
+            
+        }
+        return precioTotal;
+    }
 }
